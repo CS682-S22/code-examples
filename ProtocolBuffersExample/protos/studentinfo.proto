@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+//from ProtocolBuffersExample directory compile this as follows:
+//protoc --java_out=src/main/java/ protos/studentinfo.proto
+
+option java_package = "cs682.samples.protos";
+option java_outer_classname = "StudentInfo";
+
+
+message Student {
+  string first_name = 1;
+  string last_name = 2;
+  repeated double score = 3;
+  Phone phone = 4;
+}
+
+message Phone {
+  int32 country_code = 1;
+  int32 area_code = 2;
+  int32 number = 3;
+}
